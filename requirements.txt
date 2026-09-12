@@ -1,0 +1,8 @@
+mss
+pyautogui
+pygetwindow
+pillow
+requests
+pynput
+pywebview
+numpy

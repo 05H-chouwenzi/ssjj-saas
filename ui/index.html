@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="GA75igdpb2zvTxF90C1Fls">
+<head data-page-node-id="bbR6Qm87eaSea0TOAKqeQV">
+  <meta charset="UTF-8" data-page-node-id="5qfg5epSqObJXnv5HmELh2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="kXATdThWPbwNev8CHBoAJC" />
+  <title>生死狙击 AI 助手</title>
+  <link rel="stylesheet" href="style.css" data-page-node-id="Jx0hf5MiPMnMs1sZRmrlTC" />
+</head>
+<body data-page-node-id="pvGNHAVLvTksP6YQ8qcD6g">
+  <div class="app" data-page-node-id="vl4oyFzuBQRaH2CzPpkhI8">
+    <!-- 左侧活动栏（图标导航，仿 WorkBuddy / IDE） -->
+    <nav class="activitybar" id="activitybar" data-page-node-id="zqO6UheHQCtICCizuKBoMl">
+      <div class="brand" title="生死狙击 AI 助手" data-page-node-id="n3EG1TTJiwHEKaM9msW7B0">狙</div>
+      <button class="navbtn active" data-view="dashboard" title="控制台" data-page-node-id="qDnvL8vapQx8wlTowsSQSU">
+        <svg viewBox="0 0 24 24" data-page-node-id="dtKC2SCaKQ7XfgsGhAhRIT"><path d="M3 12h7M3 6h18M3 18h12" data-page-node-id="dnPbiTLhmBSzUFlzvMt1wv"/></svg>
+      </button>
+      <button class="navbtn" data-view="logs" title="运行日志" data-page-node-id="JYHsy8mdPy9rA5UsCr0cQC">
+        <svg viewBox="0 0 24 24" data-page-node-id="jwxIPCeB8AQr8QPDxBwUcR"><path d="M4 5h16v14H4zM7 9h10M7 13h10M7 17h6" data-page-node-id="Q3R8Ku9izHen2A5lnJdMIz"/></svg>
+      </button>
+      <button class="navbtn" data-view="settings" title="设置" data-page-node-id="mSKAcpyGJxbuBHlHs5uAF7">
+        <svg viewBox="0 0 24 24" data-page-node-id="4ZuNbhHct0npV4OEe7FEMZ"><circle cx="12" cy="12" r="3" data-page-node-id="5lTDWAsBc4t6Sqpo5NFqyA"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" data-page-node-id="et1UwJmWTuJNLiT4W2ogVD"/></svg>
+      </button>
+      <button class="navbtn" data-view="scripts" title="脚本列表" data-page-node-id="u6sCpRq8KxW2Yb3nQ9vLmZ">
+        <svg viewBox="0 0 24 24" data-page-node-id="wPq7TdY2nLkZ8aVcR1sXmB"><path d="M8 6h11M8 12h11M8 18h11M4 6h.01M4 12h.01M4 18h.01" data-page-node-id="eR3nQmZ9vLkP2cXyA8sWbD"/></svg>
+      </button>
+      <button class="navbtn" data-view="env" title="环境自检" data-page-node-id="UuO5x8jotFsStgdIxiqtNK">
+        <svg viewBox="0 0 24 24" data-page-node-id="oJrE0SvfeP8wJdXnOeORyH"><path d="M9 12l2 2 4-4M12 3a9 9 0 100 18 9 9 0 000-18z" data-page-node-id="8JiOOo00rcBfLAhVFUx99E"/></svg>
+      </button>
+      <button class="navbtn" data-view="about" title="关于" data-page-node-id="sjNazHSU2D6Y12KoNv73oA">
+        <svg viewBox="0 0 24 24" data-page-node-id="lN9UfaGU7WMxxJfKsN8Zax"><circle cx="12" cy="12" r="9" data-page-node-id="aOIrW2akPgoG42SZNrYhY9"/><path d="M12 11v5M12 8h.01" data-page-node-id="A5tPrD9OgQiF28CHgYjpOs"/></svg>
+      </button>
+      <div class="spacer" data-page-node-id="88BlaDD8D06MZv51HYYglG"></div>
+      <button class="navbtn" id="btnQuit" title="退出" data-page-node-id="Da9o1pVK1mlKmHGO7l9Rsr">
+        <svg viewBox="0 0 24 24" data-page-node-id="YMSFhGiC8YVTMLcPnZTDG4"><path d="M15 4h3v16h-3M10 8l-4 4 4 4M6 12h11" data-page-node-id="E24OsLw2jtZlaFR14BI07C"/></svg>
+      </button>
+    </nav>
+
+    <!-- 主工作区 -->
+    <main class="workspace" data-page-node-id="PINlMPREcgmDdbNIlOCvF1">
+      <header class="topbar" data-page-node-id="BdVIUrbCjrCiOiWQRuIpq7">
+        <div class="title" data-page-node-id="LsIG3eaDbmWcEUjQuFb3Th">
+          <span class="appname" data-page-node-id="xoXqVvycJScD81gwMqyeaV">生死狙击 AI 助手</span>
+        </div>
+        <div class="topactions" data-page-node-id="2BmjFP6djWie6O7pabxYAb">
+          <span class="status-pill" id="statusPill" data-page-node-id="zIhp4QUBmvP2gHEmYYibY0"><i class="dot" data-page-node-id="hlQh7a2zQE6YO8Z2EndVSS"></i><span id="statusText" data-page-node-id="sf4sGO92KW3LKE9LxhZlFa">未启动</span></span>
+          <button class="btn" id="btnOnTop" title="让本窗口始终显示在游戏前面，方便看日志">📌 置顶</button>
+          <button class="btn btn-primary" id="btnStart" data-page-node-id="bFaiSV1uRpZkIS5tWfmjY8">▶ 开始</button>
+          <button class="btn" id="btnStop" data-page-node-id="I8TucL5nvoL4s6wl7Fzrc1">■ 停止</button>
+          <button class="btn" id="btnRestart" data-page-node-id="YF31yrgEjPcSq7xPjlbhie">↻ 重启</button>
+        </div>
+      </header>
+
+      <!-- 视图：控制台 -->
+      <section class="view active" id="view-dashboard" data-page-node-id="GTHovnGDOJzgYiTRVo3uD6">
+        <div class="cards" data-page-node-id="VxPfkuj6pMcZ4MhBxclRpp">
+          <div class="card" data-page-node-id="R1ni7yE0n4KDfftn7hhAqg">
+            <div class="card-title" data-page-node-id="OMdU5VrH1Ab8EpRpBG1RuG">运行状态</div>
+            <div class="big-status" id="dashStatus" data-page-node-id="IZjJLWmQhEXNIidDQZNLt0">未启动</div>
+            <div class="card-row" data-page-node-id="4jRnvFGaYB73E3H03LdHCI"><span data-page-node-id="4ZaaidvARRBhwNBskBb4AD">模型</span><b id="dashModel" data-page-node-id="feIiNIDG9SVUO8WxEhQLBW">—</b></div>
+            <div class="card-row" data-page-node-id="IkZZNeddfAFL4MB7ZE4YCc"><span data-page-node-id="lLd9QVhAd1WFQ7fKqr9RrW">自动操作</span><b id="dashAuto" data-page-node-id="xcyD9nt9QlcX4xqbifBBXH">—</b></div>
+            <div class="card-row" data-page-node-id="wcJGoER14fQub49eyEmY6B"><span data-page-node-id="fueAL7nPSe3Y1VCw74Hd2v">窗口标题</span><b id="dashWindow" data-page-node-id="Pozboa57TDTxUzPczZ8Gd2">—</b></div>
+            <div class="card-row" data-page-node-id="cenP8UMtFOmqSBtRCx0D9u"><span data-page-node-id="5PMVlC99fzhVggzFLEX0Pk">已运行帧数</span><b id="dashFrames" data-page-node-id="p3EllJ51CWshzkqmD4XxSw">0</b></div>
+            <div class="card-row" data-page-node-id="qW2mNpLkR8cVbY3sZ9xA7e"><span data-page-node-id="rT3nMkQ9pL2cVbY8xWsZ6d">当前脚本</span><b id="dashScript" data-page-node-id="sM4pR8kLqY2nVbC7xWzA5c">—</b></div>
+          </div>
+          <div class="card" data-page-node-id="z52dbLXhPi8MKXfGpFaaOn">
+            <div class="card-title" data-page-node-id="MWnBw8JFzozhxG3eJd1AVF">最近一次决策</div>
+            <div class="kv" data-page-node-id="rbc49XBZw4j57K2LGhoRB9"><span data-page-node-id="ur2UvoUiRFcXoan9wjEzBf">目标</span><b id="dashTarget" data-page-node-id="zzVHUUlOZVq45vnSBkkmrx">无</b></div>
+            <div class="kv" data-page-node-id="OIPwSlGXupmTLhWNUaqotR"><span data-page-node-id="Xt05nq3oUzyGAAg3AAQMYZ">动作</span><b id="dashAction" data-page-node-id="22kOZ8AAenxJKS1d5Fvn87">—</b></div>
+            <div class="kv" data-page-node-id="8lE4Dp8GCMa0GGmCmDKZGP"><span data-page-node-id="YDw61eJoaNcbGos6n60DXw">置信度</span><b id="dashConf" data-page-node-id="cZgG29NRITKxaE2L5aAoGc">—</b></div>
+            <div class="kv" data-page-node-id="Fo5SgXcbXcpzUFSlAfYJgD"><span data-page-node-id="palCibHnHCQG6zgTToqqfv">说明</span><b id="dashReason" data-page-node-id="6JqWehZgcvquBQBUERwetw">—</b></div>
+          </div>
+        </div>
+        <div class="hint" data-page-node-id="gTcBzz6HEGEcmX9l1e10IG">
+          提示：第一次建议先在「设置」里取消勾选「自动接管键鼠」，点「开始」观察几轮，确认模型点的都是领取/确认按钮后再开启自动。
+          热键：F8 切换自动操作、F9 暂停、F12 退出；鼠标甩到屏幕四角急停。
+        </div>
+      </section>
+
+      <!-- 视图：日志 -->
+      <section class="view" id="view-logs" data-page-node-id="KgNK11VG7mGPRCHDfzPNa6">
+        <div class="termtoolbar" data-page-node-id="Zez8LYGF6Rq2NQShFAttSb">
+          <button class="btn btn-sm" id="btnClearLog" data-page-node-id="qr1e7JBEBKHEn87cUgs9Pj">清屏</button>
+          <label class="chk" data-page-node-id="OCYX8PRq5Ykof7MEXYAFov"><input type="checkbox" id="chkAutoscroll" checked data-page-node-id="5aZxrnQRr2gY2boWVJ7maK" /> 自动滚动</label>
+        </div>
+        <div class="terminal" id="terminal" data-page-node-id="zKMEoEzdGAER6yr38OULwB"></div>
+      </section>
+
+      <!-- 视图：设置 -->
+      <section class="view" id="view-settings" data-page-node-id="iwOuZAcbhIvyZF1Z8AWtQT">
+        <form class="form" id="settingsForm" data-page-node-id="cZMMj6rsAO36001Q6yJCbe">
+          <h3 data-page-node-id="p5KM6NTsBeNZ5HFEcWAz7t">视觉大模型</h3>
+          <label data-page-node-id="6H1k5J2hBfZKqyFJb8LyMj">模型地址 (base url)<input type="text" name="model_url" data-page-node-id="4tk8Rw8qrmVvGMjd7ragEh" /></label>
+          <label data-page-node-id="kAbgCjve0sHAJiPhzyS4yz">模型名<input type="text" name="model" data-page-node-id="BLSlKWu17cM7U6I9VG1TtF" /></label>
+          <label class="chk" data-page-node-id="dPTsV3Mt86Mc1MD8NLvD1V"><input type="checkbox" name="openai_compat" data-page-node-id="t48GfzicRd5WEIUT7eLWMA" /> 使用 OpenAI 兼容接口（vLLM/llama.cpp 等）</label>
+
+          <h3 data-page-node-id="PF0dkJJDOOVAvzxa9LpRKK">截屏 / 识别</h3>
+          <label data-page-node-id="b2bVAe2wOybqhfE7vvmNHi">游戏窗口标题（含此文字即锁定）<input type="text" name="window_title" data-page-node-id="IkcscyA3suUE32d2eMATNG" /></label>
+          <label data-page-node-id="m8u9EBkADjNlJxS02kHBkA">置信度阈值 (0~1)<input type="number" step="0.05" min="0" max="1" name="confidence" data-page-node-id="dKTEf97capR0NRuIRIaKBi" /></label>
+          <label data-page-node-id="jpAWqW795eRKPcHvDHY2LP">循环间隔 (秒)<input type="number" step="0.1" min="0" name="loop_interval" data-page-node-id="XBjGGmQb4938I0vs8KEP5N" /></label>
+
+          <h3 data-page-node-id="4Rt2RCsKleAfhzmAm93u9V">执行</h3>
+          <label class="chk" data-page-node-id="JSEQkWQ6a8On7w8vqHmRJ6"><input type="checkbox" name="auto_execute" data-page-node-id="DQtO3MSdRIkFwDqFEKKJ6l" /> 自动接管键鼠（取消勾=只观察不操作）</label>
+          <label class="chk" data-page-node-id="yKfLjrXqOKFG7IIIH10GOm"><input type="checkbox" name="hold_fire" data-page-node-id="Dl5WbxyebSa94rgVsb9MLe" /> 有目标时持续按住左键（连射）</label>
+
+          <div class="form-actions" data-page-node-id="QFD38DCAlFLaBQinCNZYkE">
+            <button type="submit" class="btn btn-primary" data-page-node-id="KENoICSKEptocfgJAerE4A">保存设置</button>
+            <span id="settingsMsg" class="msg" data-page-node-id="S1w5ARbeyEod36mRdbfEom"></span>
+          </div>
+        </form>
+      </section>
+
+      <!-- 视图：脚本列表 -->
+      <section class="view" id="view-scripts" data-page-node-id="Lk2mNpQ8xVcR7sYb3zWqA9">
+        <div class="script-toolbar" data-page-node-id="pQ9rS2tLkY7nVbC4mXwZ8d">
+          <h3 data-page-node-id="hT3nM8cRpQ2yLbV9xKsA7e">脚本列表</h3>
+          <button class="btn btn-primary btn-sm" id="btnNewScript" data-page-node-id="nL8kQ2mRpY9cVbX4sWzA6f">＋ 新增脚本</button>
+        </div>
+        <div class="script-list" id="scriptList" data-page-node-id="sM2pR8kLqY7nVbC9xWzD5a"></div>
+        <div class="script-hint" data-page-node-id="hR9mK2pLqY8nVbC7xWsZ4c">
+          说明：每个脚本是一个自动化任务。先选中一个设为「当前」，点顶部「开始」就会运行该脚本绑定的程序：
+          填了「运行程序」就跑那个 .py（如 auto_lobby.py），留空则跑主程序 main.py（由视觉大模型按提示词操作）。
+          勾选「仅识别不点击」的脚本只做识别不点鼠标，方便先观察。脚本可直接编辑 <code data-page-node-id="cQ2pR8kLqY7nVbC3xWzA1b">scripts.json</code> 增删。
+        </div>
+      </section>
+
+      <!-- 视图：环境自检 -->
+      <section class="view" id="view-env" data-page-node-id="IoeEORpN0UyBOU632y1L1U">
+        <div class="env-head" data-page-node-id="mSOfBGSUcHEwAAKPfvsg3l">
+          <button class="btn btn-primary" id="btnCheckEnv" data-page-node-id="svEMtVOrpkZHg67oiK4QGm">运行环境自检</button>
+        </div>
+        <div class="env-list" id="envList" data-page-node-id="IfLkC7Z49xu0chw2bgHp7L">
+          <div class="env-item pending" data-page-node-id="fM6EAZRo3Yol8p9LqBw7K4"><span class="name" data-page-node-id="kbqau9F5TBaSh7ZdKgh9SU">Python</span><span class="state" data-page-node-id="lLquBYvulyB9HO5ZD6Quo9">未检测</span></div>
+          <div class="env-item pending" data-page-node-id="TVxGAM3ZLh2xsfJlUJr4nE"><span class="name" data-page-node-id="4aeQa7AtN99EevFHASAjqa">主程序 main.py</span><span class="state" data-page-node-id="tSBcMkaZOBGhLz2LbWtAVI">未检测</span></div>
+          <div class="env-item pending" data-page-node-id="yb7g7fuemEckz1SmnB4blF"><span class="name" data-page-node-id="0cEZHHKRGRyiRHAOTffd3z">Ollama 服务</span><span class="state" data-page-node-id="2GNOaF3f2Au0oiS3LKoTDE">未检测</span></div>
+          <div class="env-item pending" data-page-node-id="AgftqYZoZ6JqRHfSkaEuoY"><span class="name" data-page-node-id="XR9XGa264er7UmyIlIizOU">模型 qwen2.5vl:3b</span><span class="state" data-page-node-id="zGVXbXHAOHyGL2dvIds9v7">未检测</span></div>
+        </div>
+      </section>
+
+      <!-- 视图：关于 -->
+      <section class="view" id="view-about" data-page-node-id="FHsCEmtE4WqZ23UDp52Ns2">
+        <div class="about" data-page-node-id="GFbfryHIFMi2bcF8P2SVge">
+          <h2 data-page-node-id="wlapDlcvVO89mvCLVGO9AO">生死狙击 AI 助手</h2>
+          <p data-page-node-id="f7Zc2copOoGROw2s3fFfSY">局外自动点击领取任务 / 奖励 / 跑图领奖的本地 AI 客户端。</p>
+          <ul data-page-node-id="hZRgLNRo6OYleDj2QXKeyA">
+            <li data-page-node-id="b7yget0juJwQQ2DZ20RKBq">前端：HTML / CSS / JS（仿 WorkBuddy 布局，可自由改 <code data-page-node-id="dAwUnRFLD3thzJy3iqa6yR">ui/</code> 下文件）</li>
+            <li data-page-node-id="PxNjQ6o45PKLoJKoB7OYrD">壳子：pywebview（把网页包成桌面窗口）</li>
+            <li data-page-node-id="jgslfiXNndItPscuZmNNhK">大脑：本地视觉大模型 <code data-page-node-id="5Tq3mMDDiZmQEFlHbsFPgz">qwen2.5vl:3b</code>（Ollama）</li>
+            <li data-page-node-id="VwBMygGzVNw2v9fzxf2RnN">逻辑：截屏 → 模型判断点击位置 → 自动点击</li>
+          </ul>
+          <p class="warn" data-page-node-id="HIbPfvNmOFcSRXzlKTFH2L">注意：在线游戏用脚本自动操作可能违反用户协议，请仅在单机/训练/私人房间使用，并善用「仅观察」模式。</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- 脚本编辑弹窗 -->
+  <div class="modal-mask" id="scriptModalMask" data-page-node-id="mM2kP8rQyL7nVbC9xWsA3d">
+    <div class="modal" data-page-node-id="nL9qR2mPkY8cVbX7sWzB4e">
+      <h3 id="scriptModalTitle" data-page-node-id="hT4nM8kQrP2yLbV9xWsC5f">编辑脚本</h3>
+      <label data-page-node-id="lR2mP8kQyL7nVbC3xWzA6g">名称<input type="text" id="scName" data-page-node-id="iN8kQ2mPkY9cVbX5sWzD7h" /></label>
+      <label data-page-node-id="lP4nQ8kRpL9yVbC5xWsG0k">描述<input type="text" id="scDesc" data-page-node-id="iP0mR9kQyL9cVbX7sWzH1l" /></label>
+      <label data-page-node-id="lQ5nR9kPqL0yVbC6xWsI2m">给模型的提示词（决定它点什么）<textarea id="scPrompt" data-page-node-id="tQ1nS0kRpM0yVbC8xWzJ3n"></textarea></label>
+      <label class="chk" data-page-node-id="lU9rT4kSrL4yVbC5xWsR1v"><input type="checkbox" id="scAuto" data-page-node-id="iU5sU5kTrL5yVbC6xWsS2w" /> 自动接管键鼠（取消=只观察不操作）</label>
+      <div class="form-actions" data-page-node-id="dH8sU5kTrL5yVbC7xWsT3x">
+        <button class="btn" id="scCancel" data-page-node-id="bH9tU6kUrL6yVbC8xWsU4y">取消</button>
+        <button class="btn btn-primary" id="scSave" data-page-node-id="bI0uU7kUrL7yVbC9xWsV5z">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

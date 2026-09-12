@@ -1,0 +1,12 @@
+[
+  {
+    "id": "daily_reward",
+    "name": "沙漠二噩梦经验书脚本",
+    "desc": "沙漠奇兵2·噩梦 自动找房/进房/确定/退出 挂机循环",
+    "enabled": true,
+    "prompt": "",
+    "auto_execute": true,
+    "program": "auto_lobby.py",
+    "dry": false
+  }
+]

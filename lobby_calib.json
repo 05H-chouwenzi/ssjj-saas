@@ -1,0 +1,21 @@
+{
+  "_说明": "所有坐标均为『参考分辨率 1920x1077』下的坐标，运行时会自动换算到实际屏幕。用 calibrate.py 可在线取点校准。",
+  "map_node_desert2": [
+    962,
+    211
+  ],
+  "btn_roomlist": [
+    1272,
+    532
+  ],
+  "btn_chat": [
+    1430,
+    334
+  ],
+  "wait_sec_scan": 1.5,
+  "wait_sec_battle": 2,
+  "max_wait_min": 5,
+  "click_retry": 3,
+  "click_retry_gap": 0.4,
+  "wait_sec_load": 8
+}
